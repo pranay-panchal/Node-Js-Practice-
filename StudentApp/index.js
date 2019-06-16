@@ -1,14 +1,19 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
-app.listen(8080);
+const studentController = require('../StudentApp/src/controller/student.controller');
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({extended: true}));
 
-console.log('Server started on port 8080');
 
-app.get('/student');
+app.get('/student', studentController.getStudentInfo);
+app.get('/student/id/:id', studentController.getStudentById);
+app.post('/student', studentController.addStudentInfo);
+
+app.listen(8080);
+
+console.log('Server started on port 8080');
 
 module.exports = app;
