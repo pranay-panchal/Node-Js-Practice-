@@ -5,12 +5,16 @@ const studentController = require('../StudentApp/src/controller/student.controll
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 
 app.get('/student', studentController.getStudentInfo);
 app.get('/student/id/:id', studentController.getStudentById);
 app.post('/student', studentController.addStudentInfo);
+app.delete('/student/id/:id', studentController.deleteStudentInfo);
+//put API
 
 app.listen(8080);
 
