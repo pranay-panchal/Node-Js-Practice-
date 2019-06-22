@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use(studentRoutes);
+app.use('/admin', studentRoutes);
 
 app.use('/', (req, res, error) => {
     if (error) {
