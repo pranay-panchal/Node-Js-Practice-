@@ -43,6 +43,18 @@ class StudentBiz {
             }
         });
     }
+
+    deleteStudent(id) {
+        return new Promise(async(resolve,reject) => {
+            try {
+                const studentRepo = new StudentRepo();
+                await studentRepo.deleteStudent(id);
+                resolve(true);
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }
 }
 
 module.exports = StudentBiz;

@@ -54,5 +54,22 @@ module.exports = {
                 error: error.message
             });
         }
+    },
+
+    deleteStudentInfo: async(request, response) => {
+        try {
+            const id = request.params.id;
+            const studentBiz = new StudentBiz();
+            await studentBiz.deleteStudent(id);
+            response.status(200).json({
+                sucess: true,
+                message: 'Record deleted sucessfully.'
+            });
+        } catch (error) {
+            response.status(500).json({
+                sucess: false,
+                error: error.message
+            });
+        }
     }
 }

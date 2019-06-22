@@ -1,16 +1,24 @@
 const express = require('express')
 const app = express();
 const bodyParser = require('body-parser');
-const studentController = require('../StudentApp/src/controller/student.controller');
+const studentRoutes = require('./src/routes/student');
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
+app.use(studentRoutes);
 
-app.get('/student', studentController.getStudentInfo);
-app.get('/student/id/:id', studentController.getStudentById);
-app.post('/student', studentController.addStudentInfo);
+app.use('/', (req, res, error) => {
+    if (error) {
+        res.status(500).json({
+            sucess: false,
+            message: 'Oops Something went wrong!'
+        });
+    }
+});
 
 app.listen(8080);
 

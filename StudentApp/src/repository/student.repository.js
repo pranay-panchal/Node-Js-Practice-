@@ -50,6 +50,18 @@ class StudentRepo {
             }
         });
     }
+
+    deleteStudent(id) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const query = `DELETE from student WHERE id = ?`;
+                await mysql.execute(query, [id]);
+                resolve(true);
+            } catch (error) {
+                reject(error);
+            }
+        });
+    }
 }
 
 module.exports = StudentRepo;
