@@ -14,7 +14,7 @@ app.use('/admin', studentRoutes);
 
 app.use('/', (req, res, error) => {
     if (error) {
-        res.sendFile(path.join(__dirname, 'views', '../', 'notFound.html'));
+        // res.sendFile(path.join(__dirname, 'views', '../', 'notFound.html'));
         res.status(500).json({
             sucess: false,
             message: 'Oops Something went wrong!'
