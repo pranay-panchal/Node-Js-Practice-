@@ -26,7 +26,7 @@ module.exports = {
         try {
             const data = request.body;
             const studentBiz = new StudentBiz();
-            await studentBiz.addStudent(data);
+            const resp =  await studentBiz.addStudent(data);
             response.status(200).json({
                 sucess: true,
                 record_added : true

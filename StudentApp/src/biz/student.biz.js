@@ -21,7 +21,10 @@ class StudentBiz {
         return new Promise(async (resolve, reject) => {
             try {
                 const studentRepo = new StudentRepo();
-                studentRepo.addStudentInfo(data.name, data.dob, data.gender, data.address, data.contact_no);
+                const resp = await studentRepo.addStudentInfo(data.name, data.dob, data.gender, data.address, data.contact_no);
+                if (resp === false) {
+                    reject(error.message);
+                }
                 resolve(true);
             } catch (error) {
                 reject(error);
@@ -30,11 +33,11 @@ class StudentBiz {
     }
 
     getStudentById(id) {
-        return new Promise(async(resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
             try {
                 const studentRepo = new StudentRepo();
                 const data = await studentRepo.fetchStudentInfoById(id);
-                if(!data) {
+                if (!data) {
                     reject(error);
                 }
                 resolve(data);
@@ -45,7 +48,7 @@ class StudentBiz {
     }
 
     deleteStudent(id) {
-        return new Promise(async(resolve,reject) => {
+        return new Promise(async (resolve, reject) => {
             try {
                 const studentRepo = new StudentRepo();
                 await studentRepo.deleteStudent(id);
