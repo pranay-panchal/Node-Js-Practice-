@@ -55,7 +55,10 @@ class StudentRepo {
         return new Promise(async (resolve, reject) => {
             try {
                 const query = `DELETE from student WHERE id = ?`;
-                await mysql.execute(query, [id]);
+                const data =  await mysql.execute(query, [id]);
+                if(data.affectedRows === 0) {
+                    reject(error);
+                }
                 resolve(true);
             } catch (error) {
                 reject(error);
