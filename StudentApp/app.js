@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const studentRoutes = require('./src/routes/student');
+const studentRoutes = require('./src/api/student');
 const path = require('path');
 
 app.use(express.text());
