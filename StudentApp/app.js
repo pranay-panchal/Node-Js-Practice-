@@ -19,8 +19,13 @@ app.use('/', (req, res, error) => {
     }
 });
 
-app.listen(8080);
+app.listen(8080, (error) => {
+    if(error) {
+        console.log('error starting the server');
+    } else {
+        console.log('Listening to requests on port 8080...')
+    }
+});
 
-console.log('Server started on port 8080');
 
 module.exports = app;
