@@ -1,0 +1,14 @@
+{
+  "name": "role_based_access",
+  "version": "1.0.0",
+  "description": "Role based access for apis using nodejs and passport js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pranay P.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
