@@ -1,0 +1,32 @@
+[
+    {
+        "Game": "Assasins Creed: Origins",
+        "Type": "Open World",
+        "Subtype": "Adventure",
+        "Ratings": "9/10" 
+    },
+    {
+        "Game": "Assasins Creed: Oddessy",
+        "Type": "Open World",
+        "Subtype": "Adventure",
+        "Ratings": "10/10" 
+    },
+    {
+        "Game": "NBA 2K20",
+        "Type": "Sport",
+        "Subtype": "Basketball",
+        "Ratings": "9/10" 
+    },
+    {
+        "Game": "World War Z",
+        "Type": "Third Person shooter",
+        "Subtype": "Zombie Apoclypse",
+        "Ratings": "9/10" 
+    },
+    {
+        "Game": "Naruto Shippuden: Ninja Storm full burst IV",
+        "Type": "One on One Combat",
+        "Subtype": "Adventure, One on One Combat",
+        "Ratings": "9/10" 
+    }    
+]

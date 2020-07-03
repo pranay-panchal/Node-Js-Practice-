@@ -1,5 +1,6 @@
 const StudentBiz = require('../biz/student.biz');
 const ResponseModel = require('../models/responseModel.models');
+const herokuSampleJson = require('../data.json');
 
 module.exports = {
     getStudentInfo: async (request, response) => {
@@ -27,6 +28,9 @@ module.exports = {
             const data = request.body;
             const studentBiz = new StudentBiz();
             const resp =  await studentBiz.addStudent(data);
+            if(resp === true) {
+                console.log('Record added successfully!');
+            }
             response.status(200).json({
                 sucess: true,
                 record_added : true
@@ -82,6 +86,20 @@ module.exports = {
                 sucess: false,
                 message: 'record not found or record already deleted'
             });
+        }
+    },
+
+    sampleGetRouteForHeroku: async(req, res) => {
+        try {
+            res.send(
+                herokuSampleJson
+            );
+        } catch (error) {
+            res.status(500).json({
+                success: false,
+                message: "something went wrong",
+                error: error.message
+            })
         }
     }
 }

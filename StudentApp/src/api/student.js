@@ -12,6 +12,9 @@ router.get('/student/id/:id', studentController.getStudentById);
 router.post('/student', studentController.addStudentInfo);
 router.delete('/student/id/:id', studentController.deleteStudentInfo);
 
+// Sample route for heroku POC
+router.get('/mygames', studentController.sampleGetRouteForHeroku);
+
 //below method only for practice purposes
 router.get('/test', (req, res) => {
     res.sendFile(path.join(__dirname, '../','views','test.html'));
