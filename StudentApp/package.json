@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "Pranay P",
   "license": "ISC",
@@ -22,5 +22,8 @@
     "npm": "^6.9.0",
     "request": "^2.88.0",
     "supertest": "^4.0.2"
+  }, 
+  "engines": {
+    "node": "12.18.1"
   }
 }
