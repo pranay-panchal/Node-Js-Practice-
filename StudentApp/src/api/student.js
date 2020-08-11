@@ -6,6 +6,10 @@ const path = require('path');
 
 const studentController = require('../controller/student.controller');
 
+/**
+ * @author Pranay P.
+ * @description below are all the routes, Enjoy!
+ */
 
 router.get('/student', studentController.getStudentInfo);
 router.get('/student/id/:id', studentController.getStudentById);
